@@ -1,0 +1,12 @@
+diff -urN mako-1.2-orig/meson.build mako-1.2/meson.build
+--- mako-1.2-orig/meson.build	2019-04-02 08:29:52.778353083 +0200
++++ mako-1.2/meson.build	2019-04-02 08:30:08.408427996 +0200
+@@ -7,7 +7,7 @@
+ 	default_options: [
+ 		'c_std=c11',
+ 		'warning_level=2',
+-		'werror=true',
++		'werror=false',
+ 	],
+ )
+ 
