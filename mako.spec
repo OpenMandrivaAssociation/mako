@@ -1,6 +1,6 @@
 Name:       mako
-Version:    1.4
-Release:    1%{?dist}
+Version:	1.4.1
+Release:	1
 Summary:    Lightweight Wayland notification daemon
 Provides:   desktop-notification-daemon
 
@@ -56,6 +56,7 @@ install -m0644 -Dt %{buildroot}%{_userunitdir}/ %{SOURCE1}
 %{_bindir}/makoctl
 %{_mandir}/man1/mako.1*
 %{_mandir}/man1/makoctl.1*
+%{_mandir}/man5/%{name}.5.*
 %{_userunitdir}/%{name}.service
 %{_datadir}/dbus-1/services/fr.emersion.mako.service
 %dir %{_datadir}/zsh
