@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(pangocairo)
+BuildRequires:	pkgconfig(systemd)
 BuildRequires:	scdoc
 BuildRequires:	systemd-macros
 Requires:	dbus
