@@ -1,37 +1,35 @@
-Name:       mako
+Summary:	Lightweight Wayland notification daemon
+Name:		mako
 Version:	1.4.1
-Release:	2
-Summary:    Lightweight Wayland notification daemon
-Provides:   desktop-notification-daemon
-
-License:    MIT
-URL:        https://github.com/emersion/%{name}
-Source0:    https://github.com/emersion/mako/archive/v%{version}.tar.gz
+Release:	3
+License:	MIT
+URL:		https://github.com/emersion/%{name}
+Source0:	https://github.com/emersion/mako/archive/v%{version}.tar.gz
 # Add dbus-activated systemd unit as required by the packaging guidelines. To
 # be upstreamed as discussed in RHBZ#1689634.
-Source1:    %{name}.service
+Source1:	%{name}.service
 
-Patch0: add-systemd-service-dbus.patch
-Patch1: meson-disable-werror.patch
-
-BuildRequires:  cmake
-BuildRequires:  meson
-BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
-BuildRequires:  pkgconfig(wayland-protocols) >= 1.14
-BuildRequires:  pkgconfig(wayland-client)
-BuildRequires:  pkgconfig(pango)
-BuildRequires:  pkgconfig(cairo)
-BuildRequires:  pkgconfig(systemd)
-BuildRequires:  pkgconfig(pangocairo)
-BuildRequires:  scdoc
-Requires:       dbus
+Patch0:		add-systemd-service-dbus.patch
+Patch1:		meson-disable-werror.patch
+BuildRequires:	meson
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(wayland-protocols) >= 1.14
+BuildRequires:	pkgconfig(wayland-client)
+BuildRequires:	pkgconfig(pango)
+BuildRequires:	pkgconfig(cairo)
+BuildRequires:	pkgconfig(pangocairo)
+BuildRequires:	scdoc
+BuildRequires:	systemd-macros
+Requires:	dbus
+Provides:	desktop-notification-daemon
+%{systemd_requires}
 
 %description
 mako is a lightweight notification daemon for Wayland compositors that support
 the layer-shell protocol.
 
 %prep
-%autosetup
+%autosetup -p1
 
 %build
 %meson -Dzsh-completions=true
