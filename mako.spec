@@ -1,7 +1,7 @@
 Summary:	Lightweight Wayland notification daemon
 Name:		mako
-Version:	1.4.1
-Release:	3
+Version:	1.6
+Release:	1
 License:	MIT
 URL:		https://github.com/emersion/%{name}
 Source0:	https://github.com/emersion/mako/archive/v%{version}.tar.gz
@@ -33,14 +33,14 @@ the layer-shell protocol.
 %autosetup -p1
 
 %build
-%meson -Dzsh-completions=true
+%meson -Dzsh-completions=true -Dsd-bus-provider=libsystemd
 %meson_build
 
 %install
 %meson_install
 
 # Install dbus-activated systemd unit
-install -m0644 -Dt %{buildroot}%{_userunitdir}/ %{SOURCE1}
+install -m0644 -Dt %{buildroot}%{_userunitdir}/ contrib/systemd/mako.service
 
 %post
 %systemd_user_post %{name}.service
