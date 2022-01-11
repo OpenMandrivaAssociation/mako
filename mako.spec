@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(pangocairo)
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	scdoc
-BuildRequires:	systemd-macros
+BuildRequires:	systemd-rpm-macros
 Requires:	dbus
 Provides:	desktop-notification-daemon
 %{systemd_requires}
