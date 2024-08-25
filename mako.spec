@@ -1,6 +1,6 @@
 Summary:	Lightweight Wayland notification daemon
 Name:		mako
-Version:	1.8.0
+Version:	1.9.0
 Release:	1
 License:	MIT
 URL:		https://github.com/emersion/%{name}
